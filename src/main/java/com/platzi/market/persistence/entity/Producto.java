@@ -1,5 +1,7 @@
 package com.platzi.market.persistence.entity;
 
+import org.hibernate.annotations.ManyToAny;
+
 import javax.persistence.*;
 import javax.swing.text.StyledEditorKit;
 
@@ -27,6 +29,10 @@ public class Producto {
     private Integer cantidadStock;
 
     private Boolean estado;
+
+    @ManyToOne // un Producto tiene 1 categoria y la categoria puede estar en varios productos
+    @JoinColumn (name = "id_categoria", insertable = false, updatable = false) // insertable y updatable es para que no puedan borrar,insertar o updatear
+    private Categoria categoria;
 
     public Integer getIdProducto() {
         return idProducto;
