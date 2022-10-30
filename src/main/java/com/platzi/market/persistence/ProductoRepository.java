@@ -15,6 +15,7 @@ public class ProductoRepository implements ProductRepository {
 
     @Autowired
     private com.platzi.market.persistence.crud.ProductoCrudRepository productoCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
     @Override
