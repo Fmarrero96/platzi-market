@@ -33,7 +33,7 @@ public class Compra {
     private Cliente cliente;
 
 
-    @OneToMany (mappedBy = "producto")
+    @OneToMany (mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProductos> productos;
 
     public Integer getIdCompra() {
@@ -82,5 +82,21 @@ public class Compra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<ComprasProductos> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<ComprasProductos> productos) {
+        this.productos = productos;
     }
 }
