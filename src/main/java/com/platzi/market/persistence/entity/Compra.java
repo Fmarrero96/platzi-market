@@ -14,8 +14,8 @@ public class Compra {
     @Column(name = "id_compra")
     private Integer idCompra;
 
-    @Column(name = "idCliente")
-    private String id_cliente;
+    @Column(name = "id_cliente")
+    private String idCliente;
 
 
     private LocalDateTime fecha;
@@ -29,7 +29,7 @@ public class Compra {
 
 
     @ManyToOne
-    @JoinColumn(name = "cliente" ,insertable = false,updatable = false)
+    @JoinColumn(name = "id_cliente" ,insertable = false,updatable = false)
     private Cliente cliente;
 
 
@@ -44,12 +44,12 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public String getId_cliente() {
-        return id_cliente;
+    public String getIdCliente() {
+        return idCliente;
     }
 
-    public void setId_cliente(String id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
     }
 
     public LocalDateTime getFecha() {
@@ -99,4 +99,5 @@ public class Compra {
     public void setProductos(List<ComprasProductos> productos) {
         this.productos = productos;
     }
+
 }
